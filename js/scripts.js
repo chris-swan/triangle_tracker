@@ -12,21 +12,21 @@ var triangle = function(sideOne, sideTwo, sideThree) {
   }
 };
 
+$(document).ready(function(){
+  $("form#triangle").submit(function(event){
 
+    var sideOne = parseInt($("input#sideOne").val());
+    var sideTwo = parseInt($("input#sideTwo").val());
+    var sideThree = parseInt($("input#sideThree").val());
+    var result = triangle(sideOne, sideTwo, sideThree);
 
-// $(document).ready(function(){
-//   $("form#triangle").submit(function(event){
-//
-//     var sideOne = parseInt($("input#sideOne").val());
-//     var sideTwo = parseInt($("input#sideTwo").val());
-//     var sideThree = parseInt($("input#sideThree").val());
-//     var result = triangle(sideOne,sideTwo, sideThree);
-//
-//     sideOne = parseInt($("input#sideOne").val(""));
-//     sideTwo = parseInt($("input#sideTwo").val(" "));
-//     sideThree = parseInt($("input#sideThree").val(""));
-//
-//     $(#result).append(result);
-//     event.preventDefault();
-//   })
-// })
+    console.log(sideOne, sideTwo, sideThree, result);
+
+    $("input#sideOne").val("");
+    $("input#sideTwo").val("");
+    $("input#sideThree").val("");
+
+    $("#result").text(result).show();
+    event.preventDefault();
+  });
+});
